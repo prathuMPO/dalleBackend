@@ -7,6 +7,16 @@ import dalleRoutes from './routes/dalleRoutes.js'
 
 dotenv.config();
 
+const corsOptions = {
+    origin: 'https://singular-buttercream-1ff626.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+  
+  app.use(cors(corsOptions));
+  
+
 const app = express();
 app.use(cors());
 app.use(express.json({limit:'50mb'}));
